@@ -2,11 +2,16 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 
+const apiUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://natours-production-1fa4.up.railway.app/api/v1/users'
+    : 'http://127.0.0.1:3000/api/v1/users';
+
 export const login = async (email, password) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:3000/api/v1/users/login',
+      url: `${apiUrl}/login`,
       data: {
         email,
         password,
@@ -28,7 +33,7 @@ export const logout = async () => {
   try {
     const res = await axios({
       method: 'GET',
-      url: 'http://127.0.0.1:3000/api/v1/users/logout',
+      url: `${apiUrl}/logout`,
     });
 
     if (res.data.status === 'success') {
