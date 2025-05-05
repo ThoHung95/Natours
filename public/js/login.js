@@ -2,12 +2,7 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 
-const apiUrl =
-  window.location.hostname === 'natours-production-1fa4.up.railway.app'
-    ? 'https://natours-production-1fa4.up.railway.app/api/v1/users'
-    : 'http://127.0.0.1:3000/api/v1/users';
-
-console.log('API URL:', apiUrl);
+const apiUrl = '/api/v1/users';
 
 export const login = async (email, password) => {
   try {
