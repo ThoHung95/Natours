@@ -36,6 +36,7 @@ app.use(
       fontSrc: ["'self'", 'https:', 'http:', 'data:'],
       scriptSrc: ["'self'", 'https:', 'http:', 'blob:'],
       styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
+      connectSrc: ["'self'", 'https://natours-production-1fa4.up.railway.app/'],
     },
   }),
 );
