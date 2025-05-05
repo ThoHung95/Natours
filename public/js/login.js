@@ -7,6 +7,8 @@ const apiUrl =
     ? 'https://natours-production-1fa4.up.railway.app/api/v1/users'
     : 'http://127.0.0.1:3000/api/v1/users';
 
+console.log('API URL:', apiUrl);
+
 export const login = async (email, password) => {
   try {
     const res = await axios({
