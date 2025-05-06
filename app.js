@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -38,6 +39,17 @@ app.use(
       styleSrc: ["'self'", "'unsafe-inline'", 'https:', 'http:'],
       connectSrc: ["'self'", 'https://natours-production-1fa4.up.railway.app'],
     },
+  }),
+);
+
+// Enable CORS
+app.use(
+  cors({
+    origin: [
+      'https://natours-production-1fa4.up.railway.app',
+      'http://127.0.0.1:3000',
+    ],
+    credentials: true,
   }),
 );
 
