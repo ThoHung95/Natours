@@ -43,7 +43,7 @@ exports.getLoginForm = (req, res) => {
     .status(200)
     .set(
       'Content-Security-Policy',
-      "connect-src 'self' https://cdnjs.cloudflare.com",
+      "connect-src 'self' https://cdnjs.cloudflare.com http://127.0.0.1:3000 https://natours-production-1fa4.up.railway.app/",
     )
     .render('login', {
       title: 'Log into your account',
