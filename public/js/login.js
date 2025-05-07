@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 
-const apiUrl = '/api/v1/users';
+const apiUrl = 'https://natours-production-1fa4.up.railway.app/api/v1/users';
 
 export const login = async (email, password) => {
   try {
